@@ -23,7 +23,9 @@ namespace NoteCreationApp
             savedDataTable.Columns.Add("Messages", typeof(String));
 
             dataGridView1.DataSource = savedDataTable;
-             
+
+            dataGridView1.Columns["Messages"].Visible = false; 
+            dataGridView1.Columns["Title"].Width = 235;               
         }
         
         private void newMessageButton_Click(object sender, EventArgs e){
@@ -50,7 +52,7 @@ namespace NoteCreationApp
         }
 
         private void deleteMessageButton_Click(object sender, EventArgs e){
-            int tableIndex = dataGridView1.CurrentCell.RowIndex;
+            int tableIndex = dataGridView1.CurrentCell.RowIndex; 
             savedDataTable.Rows[tableIndex].Delete();
         }
     }
